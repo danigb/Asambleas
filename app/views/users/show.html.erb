@@ -1,0 +1,7 @@
+<%= show_for @activity do |a| %>
+	<%= a.attributes :action, :model, :model_id %>
+<% end %>
+
+<%= show_for @user do |user| %>
+	<%= user.attribute :email %>
+<% end %>

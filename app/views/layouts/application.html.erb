@@ -7,7 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<ul>
+	<li><%= link_to 'Users', users_path %></li>
+	<li><%= link_to 'Groups', groups_path %></li>
+	<li><%= link_to 'Activities', activities_path %></li>
+</ul>
 <%= yield %>
 
 </body>

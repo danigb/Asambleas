@@ -1,4 +1,13 @@
 Asamblea::Application.routes.draw do
+  resources :groups
+
+  resources :activities
+
+  root :to => "users#index"
+  devise_for :users
+  resources :users
+  resources :activities
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
