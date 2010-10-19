@@ -1,0 +1,8 @@
+<% title 'Editando tema del orden del día' %>
+<h1><%= @topic.agenda.name  %></h1>
+<h2><%= span @topic.position, :position %>. <%= @topic.name %></h2>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @topic %> |
+<%= link_to 'Back', topics_path %>

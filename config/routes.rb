@@ -1,11 +1,15 @@
 Asamblea::Application.routes.draw do
-  resources :agendas
+  resources :topics
+
+  resources :agendas do
+    resources :topics
+  end
 
   resources :groups
 
   resources :activities
 
-  root :to => "users#index"
+  root :to => "agendas#index"
   devise_for :users
   resources :users
   resources :activities

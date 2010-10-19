@@ -1,0 +1,12 @@
+<%= simple_form_for([@agenda, @topic]) do |f| %>
+  <div class="inputs">
+    <%= f.input :position, :as => :hidden %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :agenda_id, :as => :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %><%= link_to 'Cancelar', agenda_path(@agenda) %>
+  </div>
+<% end %>

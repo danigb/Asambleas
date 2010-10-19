@@ -1,7 +1,13 @@
 
-<% title @agenda.name %>
+<%= title @agenda.name %>
 
-<%= show_for @agenda do |a| %>
-<%= a.attribute :name %>
-<%= a.attribute :state %>
+
+<table>
+  <% @agenda.topics.each do |topic| %>
+  <%= render topic %>
+  <% end %>
+</table>
+
+<% actions do %>
+<%= link_to 'Añadir tema', new_agenda_topic_path(@agenda) %>
 <% end %>

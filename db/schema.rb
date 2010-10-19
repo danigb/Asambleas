@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101019124439) do
+ActiveRecord::Schema.define(:version => 20101019160510) do
 
   create_table "activities", :force => true do |t|
     t.string   "action"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20101019124439) do
     t.integer  "user_id"
     t.integer  "group_id"
     t.string   "rol"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", :force => true do |t|
+    t.integer  "position"
+    t.string   "name",        :limit => 125
+    t.string   "description", :limit => 512
+    t.integer  "agenda_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,6 +5,11 @@ module TableForHelper
     content_tag(:table, build(table))
   end
 
+  def span(content, html_class = '')
+    
+    content_tag(:span, content, :class => html_class)
+  end
+
   protected
   def build(table)
     content_tag(:thead, build_thead(table)) + content_tag(:tbody, build_tbody(table))

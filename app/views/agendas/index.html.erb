@@ -1,25 +1,17 @@
-<% title 'Actas' %>
+<%= title 'Actas' %>
 
 <%= actions do  %>
   <%= link_to 'New Agenda', new_agenda_path %>
 <% end %>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>State</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
   <% @agendas.each do |agenda| %>
     <tr>
-      <td><%= agenda.name %></td>
+      <td><h2><%= link_to agenda.name, agenda %></h2></td>
       <td><%= agenda.state %></td>
-      <td><%= link_to 'Show', agenda %></td>
-      <td><%= link_to 'Edit', edit_agenda_path(agenda) %></td>
-      <td><%= link_to 'Destroy', agenda, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td class="actions">
+      <%= link_to 'Editar', edit_agenda_path(agenda) %>
+      <%= link_to 'Borrar', agenda, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
