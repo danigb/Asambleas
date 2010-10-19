@@ -1,0 +1,85 @@
+
+@color-link: #678098;
+@color-hover: #53677A;
+@color-header: #E1E1E1;
+@color-sombra: #CBCBCB;
+@font-action: "Helvetica";
+
+input, textarea { padding: 7px 0 7px 7px; border-color: #ccc #efefef #efefef #ccc; border-width:1px; border-style:solid; }
+
+/* 1.1 Defaults */
+body { background: #eee; border-top:4px solid #282828;
+       color: #333;
+       font-family: Georgia, serif;
+       font-size: 14px;}
+h1, h2, h3, h4, h5, h6  { margin: 0; font-family: "Lobster", Arial, serif; color: @color-link; font-weight:normal; }
+h1  {font-size: 28px; text-shadow: rgba(255, 255, 255, 0, 496094) 0px 1px 0px;}
+h2 {font-size: 24px;} h3  {font-size: 18px;} h4  {font-size: 16px;} h5  {font-size: 14px;} h6  {font-size: 12px;}
+p {margin: 0; 
+   line-height: 1.8em;
+   text-shadow: rgba(255, 255, 255, 0, 296875) 0px 1px 0px;
+}
+hr { background-color: #e6e6e6; border:0; height: 1px; margin-bottom: 20px; }
+
+/* 1.2 Hyperlinks */
+a:link, a:visited  { color: @color-link; text-decoration:none; text-shadow: rgba(255, 255, 255, 0, 496094) 0px 1px 0px;}
+a:hover { color:#53677A; }
+
+h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited,
+h4 a:link, h4 a:visited, h5 a:link, h5 a:visited, h6 a:link, h6 a:visited  { text-decoration: none; }
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover  { text-decoration: underline; }
+
+/* 2. Structure */
+body {
+    background: #EEE;
+    border: 0; padding: 0;
+    color: #555;
+}
+
+header {
+    background-color: @color-header;
+    padding: 10px;
+    border-top: 0px solid #282828;
+    border-bottom: 1px solid @color-sombra;
+}
+
+#main {
+    top: 60px; bottom: 20px;
+    border-top: 1px solid white;
+    no-border-bottom: 1px solid #CBCBCB;
+}
+
+no_footer {
+    height: 19px;
+    background-color: #E1E1E1;
+    border-top: 1px solid white;
+}
+
+/* 3. Elements */
+
+/* 3.1 Head */
+ul.navigation {float: right; }
+ul.navigation li {display: block; float: left; list-style: none;}
+ul.navigation li a {font-family: @font-action; padding: 3px 5px;}
+
+/* 3.2 Content */
+#page { width: 800px; margin: 30px auto;}
+
+div.actions {width: 100%; overflow: hidden; margin: 10px 0;}
+.actions a {display: block; float: left; padding: 3px 10px;
+               font-family: @font-action;
+               -webkit-box-shadow: rgba(255, 255, 255, 0, 746094) 0px 1px 0px;
+               -webkit-transition: background-color 400ms ease-out;
+               border-bottom-left-radius: 4px 4px;
+               border-bottom-right-radius: 4px 4px;
+               border-top: 1px solid @color-sombra;
+               border-top-left-radius: 4px 4px;
+               border-top-right-radius: 4px 4px;
+               background-color: @color-header;
+}
+div.actions a:hover {background-color: #cddfe8;}
+
+/* 3.2.2 Tables */
+table {width: 100%; margin: 10px 0; text-align: left;}
+thead {}
+td {padding: 3px 10px; text-align: left;}

@@ -1,25 +1,32 @@
-<h1>Listing activities</h1>
+<% title "Actividades" %>
+
+<% table_for @activities do |table| %>
+  <%= table.column :action %>
+<% end %>
 
 <table>
-  <tr>
-    <th>String</th>
-    <th>String</th>
-    <th>References</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @activities.each do |activity| %>
-  <tr>
-    <td><%= activity.action %></td>
-    <td><%= activity.model %></td>
-    <td><%= activity.model_id %></td>
-    <td><%= link_to 'Show', activity %></td>
-    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-    <td><%= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <thead>
+    <tr>
+      <td>String</td>
+      <td>String</td>
+      <td>References</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.action %></td>
+        <td><%= activity.model %></td>
+        <td><%= activity.model_id %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
