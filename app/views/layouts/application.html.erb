@@ -12,9 +12,8 @@
     <!-- link rel="apple-touch-icon" href="/apple-touch-icon.png" -->
 
     <%= stylesheet_link_tag 'style.css' %>
-    <link rel="stylesheet/less" href="/stylesheets/main.less" type="text/css">
-    <%= javascript_include_tag 'jquery-1.4.2.min.js', 'less-1.0.36.min.js', 'jquery.address-1.3.js', 'plugins.js' %>
-    <%= csrf_meta_tag %>
+    <link rel="stylesheet/less" href="/stylesheets/main.less" type="text/css" />
+    <%= javascript_include_tag 'less-1.0.36.min.js' %>
   </head>
 
 
@@ -30,9 +29,10 @@
     <div id="container">
       <header>
         <ul class="navigation">
-          <li><%= link_to 'Users', users_path %></li>
-          <li><%= link_to 'Groups', groups_path %></li>
-          <li><%= link_to 'Activities', activities_path %></li>
+          <li><%= link_to 'Actas', agendas_path %></li>
+          <li><%= link_to 'Personas', users_path %></li>
+          <li><%= link_to 'Grupos', groups_path %></li>
+          <li><%= link_to 'Actividad', activities_path %></li>
         </ul>
         <h1><%= yield :title %></h1>
         <div id="flash">
@@ -55,22 +55,23 @@
 
     <!-- Javascript at the bottom for fast page loading -->
 
+
+
     <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
-
-
-    <script src="js/plugins.js?v=1"></script>
-    <script src="js/script.js?v=1"></script>
+    <script>!window.jQuery && document.write('<script src="/javascripts/jquery-1.4.2.min.js"><\/script>')</script>
+    <%= javascript_include_tag 'less-1.0.36.min.js', 'jquery.address-1.3.js', 'plugins.js' %>
+    <%= csrf_meta_tag %>
 
     <!--[if lt IE 7 ]>
-      <script src="js/dd_belatedpng.js?v=1"></script>
+      <script src="javascripts/dd_belatedpng.js?v=1"></script>
     <![endif]-->
 
 
+
     <!-- yui profiler and profileviewer - remove for production -->
-    <script src="js/profiling/yahoo-profiling.min.js?v=1"></script>
-    <script src="js/profiling/config.js?v=1"></script>
+    <script src="/javascripts/profiling/yahoo-profiling.min.js?v=1"></script>
+    <script src="/javascripts/profiling/config.js?v=1"></script>
     <!-- end profiling code -->
 
 

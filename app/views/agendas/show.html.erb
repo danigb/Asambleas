@@ -1,0 +1,7 @@
+
+<% title @agenda.name %>
+
+<%= show_for @agenda do |a| %>
+<%= a.attribute :name %>
+<%= a.attribute :state %>
+<% end %>

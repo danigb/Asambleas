@@ -1,4 +1,6 @@
 Asamblea::Application.routes.draw do
+  resources :agendas
+
   resources :groups
 
   resources :activities

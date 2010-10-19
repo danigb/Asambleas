@@ -5,7 +5,6 @@
 @color-sombra: #CBCBCB;
 @font-action: "Helvetica";
 
-input, textarea { padding: 7px 0 7px 7px; border-color: #ccc #efefef #efefef #ccc; border-width:1px; border-style:solid; }
 
 /* 1.1 Defaults */
 body { background: #eee; border-top:4px solid #282828;
@@ -65,17 +64,21 @@ ul.navigation li a {font-family: @font-action; padding: 3px 5px;}
 /* 3.2 Content */
 #page { width: 800px; margin: 30px auto;}
 
+.action_shape {
+    -webkit-box-shadow: rgba(255, 255, 255, 0, 746094) 0px 1px 0px;
+    -webkit-transition: background-color 400ms ease-out;
+    border-bottom-left-radius: 4px 4px;
+    border-bottom-right-radius: 4px 4px;
+    border-top: 1px solid @color-sombra;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+    background-color: @color-header;
+}
+
 div.actions {width: 100%; overflow: hidden; margin: 10px 0;}
-.actions a {display: block; float: left; padding: 3px 10px;
-               font-family: @font-action;
-               -webkit-box-shadow: rgba(255, 255, 255, 0, 746094) 0px 1px 0px;
-               -webkit-transition: background-color 400ms ease-out;
-               border-bottom-left-radius: 4px 4px;
-               border-bottom-right-radius: 4px 4px;
-               border-top: 1px solid @color-sombra;
-               border-top-left-radius: 4px 4px;
-               border-top-right-radius: 4px 4px;
-               background-color: @color-header;
+.actions a {display: block; float: left; padding: 3px 10px; margin-top: 1px;
+            font-family: @font-action; .action_shape;
+
 }
 div.actions a:hover {background-color: #cddfe8;}
 
@@ -83,3 +86,12 @@ div.actions a:hover {background-color: #cddfe8;}
 table {width: 100%; margin: 10px 0; text-align: left;}
 thead {}
 td {padding: 3px 10px; text-align: left;}
+
+/* 3.2.3 Forms */
+input[type=text], input[type=password], textarea {
+    padding: 7px 0 7px 7px; border-color: #ccc #efefef #efefef #ccc; border-width:1px; border-style:solid; }
+
+div.input {width: 100%; overlflow: hidden;}
+div.input label {float: left; display: block; width: 8em; margin-right: 1em; text-align: right; padding-top: 10px;}
+form .actions {margin-left: 9em;}
+form .actions input {float: left;}
