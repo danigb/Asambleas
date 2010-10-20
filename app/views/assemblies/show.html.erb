@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @assembly.name %>
+</p>
+
+<p>
+  <b>Agenda:</b>
+  <%= @assembly.agenda %>
+</p>
+
+
+<%= link_to 'Edit', edit_assembly_path(@assembly) %> |
+<%= link_to 'Back', assemblies_path %>

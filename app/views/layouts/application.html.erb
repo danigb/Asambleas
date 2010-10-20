@@ -29,6 +29,7 @@
     <div id="container">
       <header>
         <ul class="navigation">
+          <li><%= link_to 'Asambleas', assemblies_path %></li>
           <li><%= link_to 'Actas', agendas_path %></li>
           <li><%= link_to 'Personas', users_path %></li>
           <li><%= link_to 'Grupos', groups_path %></li>
@@ -58,9 +59,9 @@
 
 
     <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script>!window.jQuery && document.write('<script src="/javascripts/jquery-1.4.2.min.js"><\/script>')</script>
-    <%= javascript_include_tag 'rails.js', 'jquery.address-1.3.js', 'plugins.js' %>
+    <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script -->
+    <!-- script>!window.jQuery && document.write('<script src="/javascripts/jquery-1.4.2.min.js"><\/script>')</script -->
+    <%= javascript_include_tag 'jquery-1.4.2.min.js', 'rails.js', 'jquery.address-1.3.js', 'plugins.js' %>
     <%= csrf_meta_tag %>
 
     <!--[if lt IE 7 ]>

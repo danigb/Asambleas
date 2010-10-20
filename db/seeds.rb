@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+
+dani = User.create!(:email => 'dani@asamblea.net', :password => 'entrar')
+vega = User.create!(:email => 'vega@asamblea.net', :password => 'entrar')
+
+cyl = Group.create(:name => 'Crestas y lechugas')
+cyl.users << dani
+cyl.users << vega
+cyl.save
+
+hg = Group.create(:name => 'Hierbagüenas')
+hg.users << dani
+hg.save
+
+agenda = Agenda.create!(:name => 'Enlace 17/4/2010', :group => cyl)
+agenda.topics.create(:name => 'Hablar de cosas', :description => 'Mola mucho')
+agenda.topics.create(:name => 'Hablar de más cosas', :description => 'Mola regular')
+agenda.topics.create(:name => 'Hablar de otras cosas', :description => 'Mola bastante')
+
+hg.create_assembly(agenda)
+
+pl = Agenda.create!(:name => 'Plenaria', :group => cyl)
+pl.topics.create(:name => 'Gallinas', :description => 'Nuestro tema')
+pl.topics.create(:name => 'Grupo de trabajo')
