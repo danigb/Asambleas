@@ -3,5 +3,5 @@ class Agenda < ActiveRecord::Base
   belongs_to :group
   has_many :assemblies
 
-  validates_presence_of :name, :group
+  validates :name, :presence => true
 end
