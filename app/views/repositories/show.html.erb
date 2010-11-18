@@ -1,28 +1,31 @@
 <div id="left">
-  <div id="info-agenda" class="info"></div>
+  <div id="info-assembly" class="info top">Asamblea: Blah blah</div>
   <div id="left-content">
     <div id="topics">
     </div>
   </div>
-  <div id="info-assembly"></div>
+  <div id="info-agenda" class="info bottom">Orden del día</div>
 </div>
 <div id="center">
-  <div id="info-topic" class="info"></div>
-  <div id="conter-content">  </div>
+  <div id="info-topic" class="info top">Asunto: </div>
+  <div id="center-content"></div>
   <div id="entities"></div>
-  <div id="info-users" class="info"></div>
+  <div id="info-users" class="info bottom">Eres: danigb - Participantes: 20 (Online: 5)</div>
 </div>
 <div id="right">
-  <div id="info-messages" class="info"></div>
+  <div id="info-messages" class="info top">Chat (0)</div>
   <div id="right-content">
-    <div id="messages">
+    <div id="messages" style="display: none;">
       <div class="output"></div>
       <div class="controls">
         <textarea cols="30" rows="5" id="new-message"></textarea>
       </div>
     </div>
+    <div id="operations" style="display: none;">
+      <div class="output"></div>
+    </div>
   </div>
-  <div id="info-history"></div>
+  <div id="info-operations" class="info bottom">Historial (0)</div>
 </div>
 <!-- Templates -->
 
@@ -41,4 +44,7 @@
 </script>
 <script type="text/html" id="entry_template">
   <div class="entry">Entry: {{body}}</div>
+</script>
+<script type="text/html" id="operation_template">
+  <div class="operation {{method}}">{{method}} {{model_class}}: {{params}}</div>
 </script>

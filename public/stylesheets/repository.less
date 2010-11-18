@@ -10,6 +10,8 @@
 @font-action: "Helvetica";
 @font-sans: "Lobster", Arial, serif;
 @font-serif: Georgia, serif;
+@color-GET: #73C5A9;
+@color-active: #c00;
 
 .btl {
   -moz-border-radius-topleft: 5px;
@@ -57,7 +59,7 @@
 html {height: 100%; overflow: hidden;}
 body { background: #eee; border-top:4px solid #282828;
        color: @color-text;
-       font-family: @font-serif;
+       font-family: @font-sans;
        font-size: 14px;}
 h1, h2, h3, h4, h5, h6  { margin: 0;  color: @color-link; font-weight:normal; }
 h1  {font-size: 38px; text-shadow: rgba(255, 255, 255, 0, 496094) 0px 1px 0px;}
@@ -87,32 +89,40 @@ body {
 
 #container {position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden;}
 
-#actions {position: absolute; right: 10px; top: 0; bottom: 34px; width: 289px;}
-#discussion {position: absolute; top: 0; bottom: 24px; left: 300px; right: 300px;
-             border-left: 1px solid white; }
-#topics {position: absolute; top: 0; bottom: 24px; left: 0; width: 299px;
-         background-color: @color-header; border-right: 1px solid @color-sombra;}
-#session {position: absolute; left: 0; bottom: 0; right: 0; height: 24px;
-  background-color: #f4fce8; -webkit-box-shadow: rgba(0, 0, 0, 0.2) 6px 0 0 0;}
+@info-height: 24px;
+#left, #right, #center {position: absolute; top: 0; bottom: 0;}
+#left {left: 0; width: 300px;}
+#right {right: 0; width: 300px; }
+#center {left: 300px; right: 300px;}
+#left-content, #right-content, #center-content {
+  border-top: 1px solid white; border-bottom: 1px solid @color-sombra;
+  position: absolute; left: 0; right: 0; top: @info-height + 1; bottom: @info-height + 1;}
+#center-content {border-right: 1px solid @color-sombra;}
+.info {position: absolute; background-color: #f4fce8; height: @info-height; left: 0; right: 0;}
+.info.active {font-weight: bold; color: @color-active;
+              text-shadow: rgba(0, 237, 255, 0, 296875) 3px;}
+.info.top {top: 0; border-bottom: 1px solid @color-sombra;}
+.info.bottom {bottom: 0; border-top: 1px solid white;}
 
-/** Actions **/
-#actions {font-family: @font-sans; .shadow; .bbr; .bbl;}
-#actions .output {position: absolute; left: 5px; right: 5px; top: 5px; bottom: 130px; overflow: auto;}
-#actions .controls {
-  background-color: white; padding-top: 10px; border-top: 1px solid @color-sombra;
-  position: absolute; left: 0; right: 0; bottom: 24px; height: 90px; overflow: hidden;}
-#actions textarea {width: 96%; margin: 0 0 0 1%;
-                   background-color: white; border: 1px solid @color-sombra; }
-#actions .status {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 24px;
-  *zoom: 1;
-  margin-top: 10px;
-  color: #555555;
-  background: #f4fce8;
-  border-top: 1px solid #ededed;
-  padding: 0 20px;
-  .bbr; .bbl;
-}
+
+.ballon {
+  width: 97%; padding: 3px 3px; margin: 3px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
+
+
+/** Operations **/
+#operations {padding-left: 5px; position: absolute; left: 0; top: 0; right: 0; bottom: 0;border-left: 1px solid white;}
+#operations .operation {.ballon;}
+.operation.GET {background-color: @color-GET;}
+/** Messages **/
+#messages {position: absolute; left: 0; top: 0; right: 0; bottom: 0;border-left: 1px solid white;}
+#messages .output {position: absolute; left: 5px; right: 5px; top: 5px; bottom: 130px; overflow: auto;}
+#messages .controls {
+  position: absolute; left: 0; right: 0; bottom: 0px; height: 90px; overflow: hidden;}
+#messages textarea {width: 96%; margin: 0 0 0 1%;
+                    background-color: white; border: 1px solid @color-sombra; }
+
+
 
 .action {
   width: 97%; padding: 3px 3px; background-color: white; margin: 3px 0;

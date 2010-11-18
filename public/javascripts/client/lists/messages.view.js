@@ -1,3 +1,4 @@
+
 (function() {
   $$.MessageListView = Backbone.View.extend({
     el: $("#messages"),
@@ -27,7 +28,7 @@
     },
 
     addOne: function(message) {
-      var view = new MessageView({
+      var view = new $$.MessageView({
         model: message
       });
       $("#messages .output").append(view.render().el);
