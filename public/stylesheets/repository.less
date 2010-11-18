@@ -1,0 +1,91 @@
+
+
+@color-fondo: #EEE;
+@color-text: #333;
+@color-link: #678098;
+@color-hover: #53677A;
+@color-hoverbg: #cddfe8;
+@color-header: #E1E1E1;
+@color-sombra: #CBCBCB;
+@font-action: "Helvetica";
+@font-sans: "Lobster", Arial, serif;
+@font-serif: Georgia, serif;
+
+.bbl {
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -o-border-bottom-left-radius: 5px;
+  -ms-border-bottom-left-radius: 5px;
+  -khtml-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;}
+.bbr {
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -o-border-bottom-right-radius: 5px;
+  -ms-border-bottom-right-radius: 5px;
+  -khtml-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.shadow {
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+}
+
+/* 1.1 Defaults */
+html {height: 100%; overflow: hidden;}
+body { background: #eee; border-top:4px solid #282828;
+       color: @color-text;
+       font-family: @font-serif;
+       font-size: 14px;}
+h1, h2, h3, h4, h5, h6  { margin: 0;  color: @color-link; font-weight:normal; }
+h1  {font-size: 38px; text-shadow: rgba(255, 255, 255, 0, 496094) 0px 1px 0px;}
+h2 {font-size: 30px;} h3  {font-size: 18px;} h4  {font-size: 16px;} h5  {font-size: 14px;} h6  {font-size: 12px;}
+p {margin: 0;
+   line-height: 1.8em;
+   text-shadow: rgba(255, 255, 255, 0, 296875) 0px 1px 0px;
+}
+hr { background-color: #e6e6e6; border:0; height: 1px; margin-bottom: 20px; }
+
+/* 1.2 Hyperlinks */
+a:link, a:visited  { color: @color-link; text-decoration:none; text-shadow: rgba(255, 255, 255, 0, 496094) 0px 1px 0px;}
+a:hover { color:#53677A; }
+
+h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited,
+h4 a:link, h4 a:visited, h5 a:link, h5 a:visited, h6 a:link, h6 a:visited  { text-decoration: none; }
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover  { text-decoration: underline; }
+
+/* 2. Structure */
+body {
+  background: @color-fondo;
+  border: 0; padding: 0;
+  color: #555;
+  overflow: hidden;
+  
+}
+
+#container {position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden;}
+
+#actions {position: absolute; right: 10px; top: 0; bottom: 10px; width: 289px;}
+#discussion {position: absolute; top: 0; bottom: 0; left: 300px; right: 300px;
+             border-left: 1px solid white; }
+#topics {position: absolute; top: 0; bottom: 0; left: 0; width: 299px;
+         background-color: @color-header; border-right: 1px solid @color-sombra;}
+
+/** Actions **/
+#actions {background-color: white; .shadow; .bbr; .bbl;}
+#actions .controls {position: absolute; left: 0; right: 0; bottom: 24px; height: 90px; overflow: hidden;}
+#actions textarea {width: 96%; margin: 0 0 0 1%;
+                   background-color: white; border: 1px solid @color-sombra; }
+#actions .status {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 24px;
+  *zoom: 1;
+  margin-top: 10px;
+  color: #555555;
+  background: #f4fce8;
+  border-top: 1px solid #ededed;
+  padding: 0 20px;
+  .bbr; .bbl;
+}

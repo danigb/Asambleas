@@ -1,6 +1,7 @@
 Asamblea::Application.routes.draw do
 
   scope(:path_names => { :new => "nuevo", :edit => "editar" }) do
+    resources :repositories, :path => 'repo'
     resources :assemblies, :path => 'asambleas'
     resources :topics
     resources(:agendas, :path => 'actas') do
