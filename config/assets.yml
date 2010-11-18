@@ -1,0 +1,14 @@
+
+javascripts:
+  assembly:
+    - public/javascripts/lib/jquery-1.4.2.min.js
+    - public/javascripts/lib/underscore-min.js
+    - public/javascripts/lib/backbone-min.js
+    - public/javascripts/lib/ICanHaz.min.js
+    - public/javascripts/plugins/*.js
+    - public/javascripts/boot/*.js
+    - public/javascripts/client/boot.js
+    - public/javascripts/client/models/*.js
+    - public/javascripts/client/lists/*.js
+    - public/javascripts/client/helpers/*.js
+    - public/javascripts/client/load.js

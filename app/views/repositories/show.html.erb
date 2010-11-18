@@ -1,19 +1,44 @@
-<div id="topics"></div>
-<div id="discussion"></div>
-<div id="actions">
-  <div class="output"></div>
-  <div class="controls">
-    <textarea cols="30" rows="5" id="new-action"></textarea>
+<div id="left">
+  <div id="info-agenda" class="info"></div>
+  <div id="left-content">
+    <div id="topics">
+    </div>
   </div>
-  <div class="status"></div>
+  <div id="info-assembly"></div>
 </div>
-
+<div id="center">
+  <div id="info-topic" class="info"></div>
+  <div id="conter-content">  </div>
+  <div id="entities"></div>
+  <div id="info-users" class="info"></div>
+</div>
+<div id="right">
+  <div id="info-messages" class="info"></div>
+  <div id="right-content">
+    <div id="messages">
+      <div class="output"></div>
+      <div class="controls">
+        <textarea cols="30" rows="5" id="new-message"></textarea>
+      </div>
+    </div>
+  </div>
+  <div id="info-history"></div>
+</div>
 <!-- Templates -->
+
 
 <script type="text/html" id="action_template">
   <div class="action">
-    <div class="display">
-      <div class="content">{{ action }}</div>
-    </div>
+    <div class="attr-status">{{ status }}</div>
+    <div class="attr-action">{{ action }}</div>
   </div>
+</script>
+<script type="text/html" id="status_template">
+  <div class="">Actions: {{ actions }}</div>
+</script>
+<script type="text/html" id="topic_template">
+  <div class="topic"><h2>{{title}}</h2></div>
+</script>
+<script type="text/html" id="entry_template">
+  <div class="entry">Entry: {{body}}</div>
 </script>

@@ -1,15 +1,16 @@
-(function() {
-  window.Command = Backbone.Model.extend({
+(function($) {
+  $$.Command = Backbone.Model.extend({
     POST: "POST", /* create */
     GET: "GET", /* retrieve */
     PUT: "PUT", /* update */
     DELETE: "DELETE", /* delete */
 
+    // attr: method - http method
+    // attr: model_class
+    // attr: params
     initialize: function() {
-      if (!this.get("action")) {
-        this.set({
-          "action": this.GET
-        });
+      if (!this.get('persistent')) {
+        this.set({persistent : false})
       }
     },
     clear: function() {
@@ -17,4 +18,4 @@
       this.view.remove();
     }
   });
-})(window.jQuery);
+})(jQuery);

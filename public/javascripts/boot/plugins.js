@@ -1,19 +1,14 @@
 
 // remap jQuery to $
 (function($){
-
- 
-
-
-
-
-
- 
-
-
-
 })(window.jQuery);
 
+
+String.prototype.capitalize = function(){
+    return this.replace(/\w+/g, function(a){
+        return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase();
+    });
+};
 
 
 // usage: log('inside coolFunc',this,arguments);

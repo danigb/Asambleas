@@ -6,6 +6,7 @@ gem 'inherited_resources', '1.1.2'
 gem "simple_form"
 gem "show_for"
 gem "cancan"
+gem "jammit"
 
 
 # Bundle edge Rails instead:
