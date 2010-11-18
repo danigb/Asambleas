@@ -2,15 +2,25 @@
   <div id="info-assembly" class="info top">Asamblea: Blah blah</div>
   <div id="left-content">
     <div id="topics">
+      <div class="output"></div>
+      <div class="controls">
+        <input type="text" id="new-topic" />
+      </div>
     </div>
   </div>
   <div id="info-agenda" class="info bottom">Orden del día</div>
 </div>
 <div id="center">
-  <div id="info-topic" class="info top">Asunto: </div>
-  <div id="center-content"></div>
-  <div id="entities"></div>
-  <div id="info-users" class="info bottom">Eres: danigb - Participantes: 20 (Online: 5)</div>
+  <div id="info-entries" class="info top">Asunto: </div>
+  <div id="center-content">
+    <div id="users" style="display: none;">
+      <div class="output"></div>
+    </div>
+    <div id="entries" style="display: none;">
+      <div class="output"></div>
+    </div>
+  </div>
+  <div id="info-users" class="info bottom"></div>
 </div>
 <div id="right">
   <div id="info-messages" class="info top">Chat (0)</div>
@@ -27,24 +37,39 @@
   </div>
   <div id="info-operations" class="info bottom">Historial (0)</div>
 </div>
-<!-- Templates -->
 
+<!-- TEMPLATES -->
+<!-- USER -->
+<script type="text/html" id="user_template">
+  <div class="user" style="background-color: #{{color}};">
+    <h1>{{name}}</h1>
+  </div>
+</script>
 
-<script type="text/html" id="action_template">
-  <div class="action">
+<!-- USER STATUS-->
+<script type="text/html" id="user_status_template">
+  <div class="status">
+    <span class="user_name">Eres: {{ name }}</span>
+    <span class="users_info">Hay {{ users_count }} participantes ({{ users_online}} conectados)</span>
+  </div>
+</script>
+
+<!-- MESSAGE -->
+<script type="text/html" id="message_template">
+  <div class="message">
     <div class="attr-status">{{ status }}</div>
-    <div class="attr-action">{{ action }}</div>
+    <div class="attr-action">{{ body }}</div>
   </div>
 </script>
 <script type="text/html" id="status_template">
   <div class="">Actions: {{ actions }}</div>
 </script>
 <script type="text/html" id="topic_template">
-  <div class="topic"><h2>{{title}}</h2></div>
+  <div class="topic"><h1>{{title}}</h1></div>
 </script>
 <script type="text/html" id="entry_template">
   <div class="entry">Entry: {{body}}</div>
 </script>
 <script type="text/html" id="operation_template">
-  <div class="operation {{method}}">{{method}} {{model_class}}: {{params}}</div>
+  <div class="operation {{method}}">{{user_name}} {{method}} {{model_class}}: {{params}}</div>
 </script>

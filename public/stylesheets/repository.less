@@ -10,7 +10,8 @@
 @font-action: "Helvetica";
 @font-sans: "Lobster", Arial, serif;
 @font-serif: Georgia, serif;
-@color-GET: #73C5A9;
+@color-GET: #9DEC9C;
+@color-POST: #F685E1;
 @color-active: #c00;
 
 .btl {
@@ -87,6 +88,9 @@ body {
 
 }
 
+/** Containers **/
+.full-container {position: absolute; left: 0; top: 0; right: 0; bottom: 0;}
+
 #container {position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden;}
 
 @info-height: 24px;
@@ -97,34 +101,48 @@ body {
 #left-content, #right-content, #center-content {
   border-top: 1px solid white; border-bottom: 1px solid @color-sombra;
   position: absolute; left: 0; right: 0; top: @info-height + 1; bottom: @info-height + 1;}
-#center-content {border-right: 1px solid @color-sombra;}
+#center-content {border-left : 1px solid white; border-right: 1px solid @color-sombra; }
 .info {position: absolute; background-color: #f4fce8; height: @info-height; left: 0; right: 0;}
 .info.active {font-weight: bold; color: @color-active;
               text-shadow: rgba(0, 237, 255, 0, 296875) 3px;}
 .info.top {top: 0; border-bottom: 1px solid @color-sombra;}
 .info.bottom {bottom: 0; border-top: 1px solid white;}
 
-
+/** Items **/
 .ballon {
   width: 97%; padding: 3px 3px; margin: 3px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
+.item-title {display: block; padding: 2px 3px; font-size: 120%;}
 
 
 /** Operations **/
-#operations {padding-left: 5px; position: absolute; left: 0; top: 0; right: 0; bottom: 0;border-left: 1px solid white;}
+#operations {padding-left: 5px; border-left: 1px solid white; .full-container;}
 #operations .operation {.ballon;}
 .operation.GET {background-color: @color-GET;}
+.operation.POST {background-color: @color-POST;}
+
 /** Messages **/
-#messages {position: absolute; left: 0; top: 0; right: 0; bottom: 0;border-left: 1px solid white;}
+#messages {border-left: 1px solid white; .full-container;}
 #messages .output {position: absolute; left: 5px; right: 5px; top: 5px; bottom: 130px; overflow: auto;}
 #messages .controls {
   position: absolute; left: 0; right: 0; bottom: 0px; height: 90px; overflow: hidden;}
 #messages textarea {width: 96%; margin: 0 0 0 1%;
                     background-color: white; border: 1px solid @color-sombra; }
-
-
-
-.action {
+.message {
   width: 97%; padding: 3px 3px; background-color: white; margin: 3px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
-.action .attr-status {float: right;}
+.message .attr-status {float: right;}
+
+/** Topics **/
+#topics {background-color: @color-header; border-right: 1px solid @color-sombra; .full-container;}
+#topics .output {position: absolute; left: 5px; right: 5px; top: 0px; bottom: 24px;}
+#topics .controls {position: absolute; left: 0; right: 0; bottom: 0; height: 23px;}
+#new-topic {border: 1px solid @color-sombra; margin: 0 1%; width: 98%;}
+
+.topic {.ballon;}
+.topic h1 {.item-title;}
+
+/** Users **/
+#users {overflow: auto; .full-container;}
+.user {.ballon;}
+.user h1 {color: black; .item-title;}

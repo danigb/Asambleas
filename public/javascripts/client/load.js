@@ -8,13 +8,33 @@
     $$.TopicsView = new $$.TopicListView();
     $$.Operations = new $$.OperationList();
     $$.OperationsView = new $$.OperationListView();
-    $$.Session = new $$.SessionModel();
+    $$.Users = new $$.UserList();
+    $$.UsersView = new $$.UserListView();
+
+    var current = new $$.User({
+      name : $$.TextHelper.generateRandomWord(8)
+    });
+    $$.Session = new $$.SessionModel({
+      current_user : current
+    });
+
+    $$.Users.add(current);
+    console.log("CURRENT", current);
+    for (var index = 0; index < 10; index++) {
+      $$.Users.add({
+        name : $$.TextHelper.generateRandomWord(8)
+      });
+    }
 
 
     $$.Layout.init();
     $$.Layout.showOperations();
-    $$.Operations.add({method : 'GET', model_class : 'Repository',
-      params : 'Repository12354'});
+    $$.Layout.showUsers();
+    $$.Operations.add({
+      method : 'GET',
+      model_class : 'Repository',
+      params : 'Repository12354'
+    });
     console.log("Client loaded.");
   });
 })(jQuery);

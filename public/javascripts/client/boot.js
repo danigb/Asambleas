@@ -1,5 +1,7 @@
 (function() {
   console.log("Booting...");
-  window.$$ = {};
+  Backbone.sync = function(method, model, success, error) {
+  }
 
+  window.$$ = {};
 })(jQuery);

@@ -22,7 +22,7 @@
     // of the app doesn't change.
     render: function() {
       $('#messages .status').empty().append(ich.status_template({
-        messages:   Messages.length,
+        messages:   $$.Messages.length,
         commands:  0
       }));
     },
@@ -35,17 +35,14 @@
     },
 
     addAll: function() {
-      Messages.each(this.addOne);
+      $$.Messages.each(this.addOne);
     },
 
-    newAttributes: function() {
-      return {
-        message: this.input.val()
-      };
-    },
     createOnEnter: function(e) {
       if (e.keyCode == 13) {
-        Messages.add(this.newAttributes());
+        $$.Messages.add({
+          body: this.input.val()
+        });
         this.input.val('');
         return false;
       }

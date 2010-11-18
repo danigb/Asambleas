@@ -9,7 +9,7 @@
     },
 
     process : function(message) {
-      var body = message.get('message');
+      var body = message.get('body');
       if (body[0] == '#') {
         body = body.substring(1)
         var parts = this.splitter.split(body, ' ');
@@ -19,10 +19,10 @@
         setParamsToCommand(command, parts[2]);
         Commands.add(command);
         message.set({
-          message : body
+          body : body
         });
       } else {
-      // send message
+        
       }
       message.set({
         status : message.DONE
