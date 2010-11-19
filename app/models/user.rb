@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_many :groups, :through => :members
+  has_many :participants
+  has_many :repositories
+  has_many :assemblies
 
   def name
     email.split('@')[0]

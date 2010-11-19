@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101019173307) do
+ActiveRecord::Schema.define(:version => 20101119032017) do
 
   create_table "activities", :force => true do |t|
     t.string   "action"
@@ -20,17 +20,9 @@ ActiveRecord::Schema.define(:version => 20101019173307) do
     t.datetime "updated_at"
   end
 
-  create_table "agendas", :force => true do |t|
-    t.string   "name",       :limit => 256
-    t.string   "state",      :limit => 32
-    t.integer  "group_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "assemblies", :force => true do |t|
-    t.string   "name"
-    t.integer  "agenda_id"
+    t.string   "title",      :limit => 256
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,27 +41,24 @@ ActiveRecord::Schema.define(:version => 20101019173307) do
     t.datetime "updated_at"
   end
 
-  create_table "participants", :force => true do |t|
-    t.string   "name",        :limit => 16
-    t.string   "color",       :limit => 8
+  create_table "operations", :force => true do |t|
+    t.string   "action",      :limit => 16
+    t.string   "model",       :limit => 32
+    t.text     "params"
     t.integer  "user_id"
     t.integer  "assembly_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "rols", :force => true do |t|
-    t.string   "name",           :limit => 16, :null => false
-    t.integer  "participant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "topics", :force => true do |t|
-    t.integer  "position"
-    t.string   "name",        :limit => 125
+  create_table "participants", :force => true do |t|
+    t.string   "name",        :limit => 128
     t.string   "description", :limit => 512
-    t.integer  "agenda_id"
+    t.integer  "user_id"
+    t.integer  "assembly_id"
+    t.string   "roles",       :limit => 256
+    t.string   "login",       :limit => 64
+    t.string   "password",    :limit => 80
     t.datetime "created_at"
     t.datetime "updated_at"
   end

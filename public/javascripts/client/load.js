@@ -8,33 +8,43 @@
     $$.TopicsView = new $$.TopicListView();
     $$.Operations = new $$.OperationList();
     $$.OperationsView = new $$.OperationListView();
-    $$.Users = new $$.UserList();
-    $$.UsersView = new $$.UserListView();
+    $$.Participants = new $$.ParticipantList();
+    $$.ParticipantsView = new $$.ParticipantListView();
 
-    var current = new $$.User({
-      name : $$.TextHelper.generateRandomWord(8)
-    });
-    $$.Session = new $$.SessionModel({
-      current_user : current
+
+    $$.Session = new $$.SessionModel();
+    new $$.ApplicationPresenter();
+    
+    loadData();
+    console.log("Client loaded.");
+  });
+
+  function loadData() {
+    $$.Session.set({
+      assembly : new $$.Assembly(Assembly.attributes)
     });
 
-    $$.Users.add(current);
-    console.log("CURRENT", current);
-    for (var index = 0; index < 10; index++) {
-      $$.Users.add({
-        name : $$.TextHelper.generateRandomWord(8)
-      });
+    // LOAD PARTICIPANTS
+    for (var index = 0; index < Assembly.participants.length; index++) {
+      $$.Participants.add(new $$.Participant(Assembly.participants[index]));
+    }
+    var current_user = $$.Participants.getByUserId(Assembly.current_user_id);
+    console.log("SET current", current_user)
+    $$.Session.set({
+      current_user : current_user
+    });
+
+    // LOAD OPERATIONS
+    for (var opi = 0; opi < Assembly.operations.length; opi++) {
+      var operation = Assembly.operations[opi];
+      console.log("LOAD OP", operation);
+      operation.params = $.parseJSON(operation.params);
+      $$.Operations.add(new $$.Operation(operation));
     }
 
 
-    $$.Layout.init();
-    $$.Layout.showOperations();
-    $$.Layout.showUsers();
-    $$.Operations.add({
-      method : 'GET',
-      model_class : 'Repository',
-      params : 'Repository12354'
-    });
-    console.log("Client loaded.");
-  });
+
+
+  }
+
 })(jQuery);

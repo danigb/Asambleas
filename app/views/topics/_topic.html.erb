@@ -1,8 +1,0 @@
-<tr class="topic_item">
-  <td><h1><%= topic.position %>. </h1></td>
-  <td><h2><%= topic.name %></h2><%= span topic.description, :description %></td>
-  <td class="actions">
-    <%= link_to 'Editar', edit_agenda_topic_path(topic.agenda, topic) %>
-    <%= link_to 'Borrar', agenda_topic_path(topic.agenda, topic), :confirm => 'Are you sure?', :method => :delete %>
-  </td>
-</tr>

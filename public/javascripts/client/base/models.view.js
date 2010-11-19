@@ -5,9 +5,9 @@
 
     initialize: function() {
       _.bindAll(this, 'addOne', 'addAll', 'render');
-      $$.User.bind('add',     this.addOne);
-      $$.User.bind('refresh', this.addAll);
-      $$.User.bind('all',     this.render);
+      $$.Participant.bind('add',     this.addOne);
+      $$.Participant.bind('refresh', this.addAll);
+      $$.Participant.bind('all',     this.render);
     },
 
     render: function() {

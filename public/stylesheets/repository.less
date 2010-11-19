@@ -90,6 +90,7 @@ body {
 
 /** Containers **/
 .full-container {position: absolute; left: 0; top: 0; right: 0; bottom: 0;}
+.width-container {position: absolute; left: 3px; right: 3px; }
 
 #container {position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden;}
 
@@ -110,28 +111,9 @@ body {
 
 /** Items **/
 .ballon {
-  width: 97%; padding: 3px 3px; margin: 3px 0;
+  padding: 3px 3px; margin: 3px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
 .item-title {display: block; padding: 2px 3px; font-size: 120%;}
-
-
-/** Operations **/
-#operations {padding-left: 5px; border-left: 1px solid white; .full-container;}
-#operations .operation {.ballon;}
-.operation.GET {background-color: @color-GET;}
-.operation.POST {background-color: @color-POST;}
-
-/** Messages **/
-#messages {border-left: 1px solid white; .full-container;}
-#messages .output {position: absolute; left: 5px; right: 5px; top: 5px; bottom: 130px; overflow: auto;}
-#messages .controls {
-  position: absolute; left: 0; right: 0; bottom: 0px; height: 90px; overflow: hidden;}
-#messages textarea {width: 96%; margin: 0 0 0 1%;
-                    background-color: white; border: 1px solid @color-sombra; }
-.message {
-  width: 97%; padding: 3px 3px; background-color: white; margin: 3px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
-.message .attr-status {float: right;}
 
 /** Topics **/
 #topics {background-color: @color-header; border-right: 1px solid @color-sombra; .full-container;}
@@ -139,10 +121,44 @@ body {
 #topics .controls {position: absolute; left: 0; right: 0; bottom: 0; height: 23px;}
 #new-topic {border: 1px solid @color-sombra; margin: 0 1%; width: 98%;}
 
-.topic {.ballon;}
+.topic {background-color: @color-fondo; .ballon;}
+.topic.selected {background-color: white;}
 .topic h1 {.item-title;}
 
+/** Assembly **/
+#assembly {border-right: 1px solid @color-sombra; .full-container;}
+
+/** Operations **/
+#operations {background-color: @color-header; padding-left: 5px; border-left: 1px solid white; .full-container;}
+#operations .operation {.ballon;}
+.operation.GET {background-color: @color-GET;}
+.operation.POST {background-color: @color-POST;}
+
+/** Messages **/
+#messages {border-left: 1px solid white; .full-container;}
+#messages .output {position: absolute; left: 5px; right: 5px; top: 5px; bottom: 130px; overflow: auto;}
+.controls {
+  position: absolute; left: 0; right: 0; bottom: 0px; height: 90px; overflow: hidden;}
+.controls textarea {position: absolute; left: 0px; top: 3px; right: 0px; bottom: 3px;
+                    background-color: white; border: 1px solid @color-sombra; }
+.message {
+  width: 97%; padding: 3px 3px; background-color: white; margin: 3px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
+.message .attr-status {float: right;}
+
+
 /** Users **/
-#users {overflow: auto; .full-container;}
+#users {background-color: @color-header; overflow: auto; .full-container;}
 .user {.ballon;}
 .user h1 {color: black; .item-title;}
+
+/** Editor **/
+#entries, .topicEditor {.full-container;}
+.topicEditor .header {top: 0; height: 40px; .width-container; }
+.topicEditor .list {top: 41px; bottom: 91px;.width-container; }
+
+.entry, .entry .entry-info {display: block; clear: both; width: 100%; overflow: hidden;}
+.entry .entry-info {z-index: 1000;}
+.entry .user {position: relative; font-size: 80%; float: left; .ballon; margin-left: 5px; z-index: 100;}
+.entry .body {background-color: white; .ballon; float: left; z-index: -1;
+              margin: -10px 0 5px 0; padding: 15px 5px 5px 5px; }

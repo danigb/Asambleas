@@ -1,15 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div id="left">
+  <div id="info-assembly" class="info top"></div>
+  <div id="left-content">
+    <div id="topics"  style="display: none;">
+      <div class="output"></div>
+      <div class="controls">
+        <input type="text" id="new-topic" />
+      </div>
+    </div>
+    <div id="assembly"  style="display: none;">
 
-<p>
-  <b>Name:</b>
-  <%= @assembly.name %>
-</p>
-
-<p>
-  <b>Agenda:</b>
-  <%= @assembly.agenda %>
-</p>
-
-
-<%= link_to 'Edit', edit_assembly_path(@assembly) %> |
-<%= link_to 'Back', assemblies_path %>
+    </div>
+  </div>
+  <div id="info-topics" class="info bottom">Orden del día</div>
+</div>
+<div id="center">
+  <div id="info-entries" class="info top">Asunto: </div>
+  <div id="center-content">
+    <div id="users" style="display: none;">
+      <div class="output"></div>
+    </div>
+    <div id="entries" style="display: none;">
+    </div>
+  </div>
+  <div id="info-users" class="info bottom"></div>
+</div>
+<div id="right">
+  <div id="info-messages" class="info top">Chat (0)</div>
+  <div id="right-content">
+    <div id="messages" style="display: none;">
+      <div class="output"></div>
+      <div class="controls">
+        <textarea cols="30" rows="5" id="new-message"></textarea>
+      </div>
+    </div>
+    <div id="operations" style="display: none;">
+      <div class="output"></div>
+    </div>
+  </div>
+  <div id="info-operations" class="info bottom">Historial (0)</div>
+</div>
+<script type="text/javascript">
+  Assembly = {}
+  Assembly.operation_url = '<%= assembly_operations_url(@assembly) %>';
+  Assembly.current_user_id = <%= current_user.id %>;
+  Assembly.attributes = <%= @assembly.to_json.html_safe %>;
+  Assembly.participants = <%= @assembly.participants.to_json.html_safe %>;
+  Assembly.operations = <%= @assembly.operations.to_json.html_safe %>;
+</script>
+<%= render 'tmpl' %>

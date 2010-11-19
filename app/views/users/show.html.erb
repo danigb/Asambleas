@@ -1,7 +1,4 @@
-<%= show_for @activity do |a| %>
-	<%= a.attributes :action, :model, :model_id %>
-<% end %>
-
+<%= title "Compañera #{@user.name}" %>
 <%= show_for @user do |user| %>
 	<%= user.attribute :email %>
 <% end %>

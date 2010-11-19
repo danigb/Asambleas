@@ -8,13 +8,7 @@
     
   }
 
-  $$.Layout = {
-    init : function() {
-      $("#info-messages").click($$.Layout.showMessages);
-      $("#info-operations").click($$.Layout.showOperations);
-      $("#info-users").click($$.Layout.showUsers);
-      $("#info-entries").click($$.Layout.showEntries);
-    },
+  $$.LayoutHelper = {
 
     showMessages : function() {
       toggle("messages", "operations");
@@ -28,7 +22,14 @@
     },
     showEntries : function() {
       toggle("entries", "users");
+    },
+    showTopics : function() {
+      toggle("topics", "assembly");
+    },
+    showAssembly : function() {
+      toggle("assembly", "topics");
     }
+
 
   };
 })(jQuery);

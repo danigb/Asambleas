@@ -1,19 +1,32 @@
-<%= title 'Asambleas' %>
+<% title "Tus asambleas"  %>
+
+<%= actions do %>
+  <%= link_to 'Crear una asamblea', new_assembly_path %>
+<% end %>
 
 <table>
+  <tr>
+    <th>Nombre</th>
+    <th>Participantes</th>
+    <th></th>
+  </tr>
   <% @assemblies.each do |assembly| %>
     <tr>
-      <td><h2><%= assembly.name %></h2></td>
-      <td><% assembly.participants.each do |participant| %>
-          <%= participant_tag(participant) %>
-        <% end %><%= assembly.participants.length %> </td>
-      <td class="actions"><%= link_to 'Entrar', assembly %>
-      <%= link_to 'Edit', edit_assembly_path(assembly) %>
-      <%= link_to 'Destroy', assembly, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to assembly.title, assembly %></td>
+      <td>
+        (<%= assembly.participants.length %>)
+        <% assembly.participants.each do |participant| %>
+          <%= participant.name %>
+        <% end %> </td>
+      <td class="actions">
+
+        <%= link_to 'Participantes', assembly_participants_path(assembly) %>
+        <%= link_to 'Operaciones', assembly_operations_path(assembly) %>
+        <%= link_to 'Editar', edit_assembly_path(assembly) %>
+        <%= link_to 'Borrar', assembly, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Assembly', new_assembly_path %>

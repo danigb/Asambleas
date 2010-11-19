@@ -10,4 +10,9 @@ module ApplicationHelper
     content_tag(tag, :class => 'buttons', &block)
   end
 
+  def jd(value)
+    escape_javascript(value)
+    value
+  end
+
 end

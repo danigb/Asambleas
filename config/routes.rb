@@ -1,18 +1,16 @@
 Asamblea::Application.routes.draw do
 
-  scope(:path_names => { :new => "nuevo", :edit => "editar" }) do
-    resources :repositories, :path => 'repo'
-    resources :assemblies, :path => 'asambleas'
-    resources :topics
-    resources(:agendas, :path => 'actas') do
-      resources :topics
+  scope(:path_names => { :new => "crear", :edit => "modificar" }) do
+    resources :assemblies, :path => 'a' do
+      resources :operations, :path => 'o'
+      resources :participants, :path => 'p'
     end
     resources :groups, :path => 'grupos'
     resources :activities, :path => 'actividades'
     resources :users, :path => 'personas'
   end
 
-  root :to => "agendas#index"
+  root :to => "assemblies#index"
 
   devise_for :users
   

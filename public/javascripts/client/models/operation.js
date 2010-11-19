@@ -1,3 +1,14 @@
+/**
+ * Operation
+ *
+ * :method => one of the methods
+ * :model_class => the model to be created
+ * :op_code => the operation code id
+ * ... (the rest of the attributes)
+ * :title => title of the Assembly, Topic
+ * :body => body of the Entry
+ * 
+ */
 (function($) {
   $$.Operation = Backbone.Model.extend({
     POST: "POST", /* create */
@@ -5,21 +16,13 @@
     PUT: "PUT", /* update */
     DELETE: "DELETE", /* delete */
 
-    // attr: method - http method
-    // attr: model_class
-    // attr: params
     initialize: function() {
       if (!this.get('user_id')) {
         this.set({
           user_id : $$.Session.current_id()
           });
       }
-      if (!this.get('persistent')) {
-        this.set({
-          persistent : false
-        })
-      }
-      this.set({user_name : $$.Users.getByCid(this.get('user_id')).get('name')})
+      //this.set({user_name : $$.Participants.getByCid(this.get('user_id')).get('name')})
     },
     clear: function() {
       this.destroy();

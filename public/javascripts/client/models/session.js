@@ -6,8 +6,13 @@
     current_user : function() {
       return this.get('current_user');
     },
+    current_name : function() {
+      var cu = this.current_user();
+      return cu ? cu.get('name') : null;
+    },
     current_id : function() {
-      return this.current_user().cid;
+      var cu = this.current_user();
+      return cu ? cu.get('id') : null;
     }
 
   });

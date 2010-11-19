@@ -1,6 +1,27 @@
-<%= link_to 'New User', new_user_path %>
+
+<% title "Tus colegas"  %>
+
+<% actions do %>
+  <%= link_to "Crear una asamblea", new_usersitory_path if current_user.id == 1 %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Participantes</th>
+    <th></th>
+  </tr>
 
 <% @users.each do |user| %>
-	<%= link_to user.email, user %>
+  <tr>
+    <td><%= link_to user.name, user%></td>
+    <td><%= user.email %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %>
+    <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
 <% end %>
-	
+</table>
+
+<br />
+
+
