@@ -1,0 +1,23 @@
+<%= simple_form_for([@assembly, @operation]) do |f| %>
+  <% if @operation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@operation.errors.count, "error") %> prohibited this assembly from being saved:</h2>
+
+      <ul>
+      <% @operation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inputs">
+    <%= f.input :action, :collection => ['POST', 'PUT', 'DELETE'] %>
+    <%= f.input :model, :collection => ['Topic', 'Entry'] %>
+    <%= f.input :params %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

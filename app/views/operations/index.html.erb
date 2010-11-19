@@ -1,0 +1,32 @@
+<% title "Operaciones a #{@assembly.title}"  %>
+
+<%= actions do %>
+  <%= link_to 'Volver', assemblies_path %>
+  <%= link_to 'Añadir una operación', new_assembly_operation_path(@assembly) %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Operation Id</th>
+    <th>User</th>
+    <th>Action</th>
+    <th>Model</th>
+    <th>Params</th>
+    <th></th>
+  </tr>
+  <% @operations.each do |op| %>
+    <tr>
+      <td><%= op.id %></td>
+      <td><%= op.user.name %></td>
+      <td><%= op.action %></td>
+      <td><%= op.model %></td>
+      <td><%= op.params %></td>
+      <td class="actions">
+        <%= link_to 'Edit', edit_assembly_operation_path(@assembly, op) %>
+        <%= link_to 'Destroy', assembly_operation_path(@assembly, op), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
