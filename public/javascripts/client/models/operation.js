@@ -11,18 +11,13 @@
  */
 (function($) {
   $$.Operation = Backbone.Model.extend({
-    POST: "POST", /* create */
-    GET: "GET", /* retrieve */
-    PUT: "PUT", /* update */
-    DELETE: "DELETE", /* delete */
-
     initialize: function() {
-      if (!this.get('user_id')) {
+      if (!this.get('participant_id')) {
         this.set({
-          user_id : $$.Session.current_id()
-          });
+          participant_id : $$.Session.current_id
+        });
       }
-      //this.set({user_name : $$.Participants.getByCid(this.get('user_id')).get('name')})
+    //this.set({participant_name : $$.Participants.getByCid(this.get('participant_id')).get('name')})
     },
     clear: function() {
       this.destroy();

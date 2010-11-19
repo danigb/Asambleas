@@ -1,19 +1,18 @@
 (function() {
   $$.SessionModel = Backbone.Model.extend({
     initialize : function () {
+      this.current_participant = null;
+      this.current_id = null;
+      this.current_name = null;
+      this.bind('change:current_participant', this.setCurrentParticipant);
       console.log("Session!");
     },
-    current_user : function() {
-      return this.get('current_user');
-    },
-    current_name : function() {
-      var cu = this.current_user();
-      return cu ? cu.get('name') : null;
-    },
-    current_id : function() {
-      var cu = this.current_user();
-      return cu ? cu.get('id') : null;
+    setCurrentParticipant : function() {
+      var participant = this.get('current_participant');
+      this.current_participant = participant;
+      this.current_id = participant.get('id');
+      this.current_name = participant.get('name');
+      console.log("Session setCurrentParticipant", participant, this.current_id);
     }
-
   });
 })();

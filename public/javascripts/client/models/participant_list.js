@@ -3,16 +3,18 @@
     model: $$.Participant,
 
     initialize : function() {
-      var byUserId = this.byUserId = {};
+      var byParticipantId = this.byParticipantId = {};
       this.bind('add', function(participant) {
-      console.log("REGISTER Participant", participant, participant.get('user_id'));
-        byUserId[participant.get('user_id')] = participant;
+        console.log("REGISTER Participant", participant, participant.get('id'));
+        byParticipantId[participant.get('id')] = participant;
       });
     },
-    getByUserId : function(user_id) {
-      return this.byUserId[user_id];
+    getByParticipantId : function(participant_id) {
+      var participant = this.byParticipantId[participant_id];
+      console.log("ParticipantList getByParticipantId", participant_id, participant);
+      return participant;
     },
-    // number of users online
+    // number of participants online
     online : function() {
       return 0;
     }

@@ -17,11 +17,11 @@
       toggle("operations", "messages");
     },
 
-    showUsers : function() {
-      toggle("users", "entries");
+    showParticipants : function() {
+      toggle("participants", "entries");
     },
     showEntries : function() {
-      toggle("entries", "users");
+      toggle("entries", "participants");
     },
     showTopics : function() {
       toggle("topics", "assembly");

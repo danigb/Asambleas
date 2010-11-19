@@ -16,10 +16,12 @@
     var type = methodMap[method];
     var data = model.toJSON();
     data.params = JSON.stringify(data.params);
+    
     var modelJSON = (method === 'create' || method === 'update') ?
     JSON.stringify({
       operation : data
     }) : null;
+    console.log("SYNC OPERATION", modelJSON);
 
     var log_success = function() {
       console.log("Ajax OK! Invoking: ", success);

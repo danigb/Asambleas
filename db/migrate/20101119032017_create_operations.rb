@@ -4,7 +4,7 @@ class CreateOperations < ActiveRecord::Migration
       t.string :action, :limit => 16, :allow_nil => false
       t.string :model, :limit => 32, :allow_nil => false
       t.text :params, :allow_nil => false
-      t.references :user, :allow_nil => false
+      t.references :participant, :allow_nil => false
       t.references :assembly, :allow_nil => false
       t.timestamps
     end

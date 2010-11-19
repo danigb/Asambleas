@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(:version => 20101119032017) do
   end
 
   create_table "operations", :force => true do |t|
-    t.string   "action",      :limit => 16
-    t.string   "model",       :limit => 32
+    t.string   "action",         :limit => 16
+    t.string   "model",          :limit => 32
     t.text     "params"
-    t.integer  "user_id"
+    t.integer  "participant_id"
     t.integer  "assembly_id"
     t.datetime "created_at"
     t.datetime "updated_at"

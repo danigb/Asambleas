@@ -5,7 +5,9 @@ class OperationsController < InheritedResources::Base
   respond_to :html, :xml, :json
 
   def create
-    params[:operation][:user_id] = current_user
+    # TODO: ensure currect (use cancan)
+    current_user.participants.find(params[:operation][:participant_id])
+
     create! do |format|
       format.html { assembly_operations_path(@assembly) }
       format.json { render :json => @operation}

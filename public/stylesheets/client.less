@@ -147,18 +147,18 @@ body {
 .message .attr-status {float: right;}
 
 
-/** Users **/
-#users {background-color: @color-header; overflow: auto; .full-container;}
-.user {.ballon;}
-.user h1 {color: black; .item-title;}
+/** Participants **/
+#participants {background-color: @color-header; overflow: auto; .full-container;}
+.participant {.ballon;}
+.participant h1 {color: black; .item-title;}
 
 /** Editor **/
 #entries, .topicEditor {.full-container;}
 .topicEditor .header {top: 0; height: 40px; .width-container; }
-.topicEditor .list {top: 41px; bottom: 91px;.width-container; }
+.topicEditor .list {top: 41px; bottom: 91px; overflow: auto; .width-container; }
 
 .entry, .entry .entry-info {display: block; clear: both; width: 100%; overflow: hidden;}
 .entry .entry-info {z-index: 1000;}
-.entry .user {position: relative; font-size: 80%; float: left; .ballon; margin-left: 5px; z-index: 100;}
+.entry .participant {position: relative; font-size: 80%; float: left; .ballon; margin-left: 5px; z-index: 100;}
 .entry .body {background-color: white; .ballon; float: left; z-index: -1;
               margin: -10px 0 5px 0; padding: 15px 5px 5px 5px; }

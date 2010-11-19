@@ -8,8 +8,10 @@
         byOperationId[topic.get('operation_id')] = topic;
       });
     },
-    getByOperationId : function(id) {
-      return this.byOperationId[id];
+    getByOperationId : function(operation_id) {
+      var topic = this.byOperationId[operation_id];
+      console.log("TopicList getByOperationId", operation_id, topic)
+      return topic;
     }
   });
 })();

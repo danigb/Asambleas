@@ -8,9 +8,9 @@
     },
     render: function() {
       var data = this.model.toJSON();
-      data.user = $$.Participants.getByUserId(data.user_id);
-      data.user_name = data.user.get('name');
-      data.user_color = data.user.get('color');
+      data.participant = $$.Participants.getByParticipantId(data.participant_id);
+      data.participant_name = data.participant.get('name');
+      data.participant_color = data.participant.get('color');
       this.el = ich.entry_template(data);
       return this;
     }

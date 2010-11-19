@@ -9,9 +9,14 @@ class Assembly < ActiveRecord::Base
   has_many :operations
 
   
+  def default_participant(user)
+    participants.where(:user_id => user.id).limit(1).first
+  end
+
+
   private
   def add_participant
-    participants.create!(:user => self.user, :name => self.user.name, :roles => 'owner')
+    participants.create!(:user => self.user, :name => self.user.name.capitalize, :roles => 'owner')
   end
 
 end

@@ -1,7 +1,7 @@
 (function($) {
 
   $$.ParticipantListView = Backbone.View.extend({
-    el: $("#users"),
+    el: $("#participants"),
 
     initialize: function() {
       _.bindAll(this, 'addOne', 'addAll', 'render');
@@ -14,11 +14,11 @@
       return true;
     },
 
-    addOne: function(user) {
+    addOne: function(participant) {
       var view = new $$.ParticipantView({
-        model: user
+        model: participant
       });
-      $("#users").append(view.render().el);
+      $("#participants").append(view.render().el);
     },
 
     addAll: function() {

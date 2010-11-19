@@ -24,6 +24,8 @@
       <td><%= part.login %></td>
       <td><%= part.password %></td>
       <td class="actions">
+        <%= link_to("Entrar como #{part.name}",
+          assembly_path(@assembly, :participant_id => part.id)) if part.user == current_user %>
         <%= link_to 'Edit', edit_assembly_participant_path(@assembly, part) %>
         <%= link_to 'Destroy', assembly_participant_path(@assembly, part), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

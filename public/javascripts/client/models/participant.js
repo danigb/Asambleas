@@ -8,7 +8,7 @@
           color: $$.ColorHelper.generate()
         });
       }
-      console.log("EN add user");
+      console.log("EN add participant");
     }
   });
 })();

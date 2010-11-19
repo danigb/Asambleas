@@ -7,7 +7,7 @@
       this.model.view = this;
     },
     render: function() {
-      this.el = ich.user_template(this.model.toJSON());
+      this.el = ich.participant_template(this.model.toJSON());
       return this;
     }
   });

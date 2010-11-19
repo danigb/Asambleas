@@ -16,13 +16,13 @@
 <div id="center">
   <div id="info-entries" class="info top">Asunto: </div>
   <div id="center-content">
-    <div id="users" style="display: none;">
+    <div id="participants" style="display: none;">
       <div class="output"></div>
     </div>
     <div id="entries" style="display: none;">
     </div>
   </div>
-  <div id="info-users" class="info bottom"></div>
+  <div id="info-participants" class="info bottom"></div>
 </div>
 <div id="right">
   <div id="info-messages" class="info top">Chat (0)</div>
@@ -42,7 +42,7 @@
 <script type="text/javascript">
   Assembly = {}
   Assembly.operation_url = '<%= assembly_operations_url(@assembly) %>';
-  Assembly.current_user_id = <%= current_user.id %>;
+  Assembly.current_participant_id = <%= @participant.id %>;
   Assembly.attributes = <%= @assembly.to_json.html_safe %>;
   Assembly.participants = <%= @assembly.participants.to_json.html_safe %>;
   Assembly.operations = <%= @assembly.operations.to_json.html_safe %>;

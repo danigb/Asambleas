@@ -29,10 +29,10 @@
     },
     createOnEnter : function(e) {
       if (e.keyCode == 13) {
+        console.log("TopicEditorPresenter ENTER");
         $$.create('Entry', {
           body : this.input.val(),
-          topic : this.topic,
-          topic_op : this.topic.op_code
+          topic_id : this.topic.get('operation_id')
         });
         this.input.val('');
         return false;

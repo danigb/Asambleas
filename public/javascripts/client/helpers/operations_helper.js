@@ -3,9 +3,11 @@
  */
 (function() {
   $$.create = function(model, params) {
+    console.log("JOOODER!", $$.Session.current_id);
     $$.Operations.create(new $$.Operation({
-      action : 'POST',
+      action : 'create',
       model : model,
+      participant_id : $$.Session.current_id,
       params :params
     }));
   }

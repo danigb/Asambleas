@@ -28,10 +28,10 @@
     for (var index = 0; index < Assembly.participants.length; index++) {
       $$.Participants.add(new $$.Participant(Assembly.participants[index]));
     }
-    var current_user = $$.Participants.getByUserId(Assembly.current_user_id);
-    console.log("SET current", current_user)
+    var current_participant = $$.Participants.getByParticipantId(Assembly.current_participant_id);
+    console.log("SET current", current_participant)
     $$.Session.set({
-      current_user : current_user
+      current_participant : current_participant
     });
 
     // LOAD OPERATIONS

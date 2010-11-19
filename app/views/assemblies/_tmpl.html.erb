@@ -1,16 +1,16 @@
 
-<!-- USER -->
-<script type="text/html" id="user_template">
-  <div class="user" style="background-color: #{{color}};">
+<!-- participant -->
+<script type="text/html" id="participant_template">
+  <div class="participant" style="background-color: #{{color}};">
     <h1>{{name}}</h1>
   </div>
 </script>
 
-<!-- USER STATUS-->
-<script type="text/html" id="user_status_template">
+<!-- participant STATUS-->
+<script type="text/html" id="participant_status_template">
   <div class="status">
-    <span class="user_name">Eres: {{ name }}</span>
-    <span class="users_info">Hay {{ users_count }} participantes ({{ users_online}} conectados)</span>
+    <span class="participant_name">Eres: {{ name }}</span>
+    <span class="participants_info">Hay {{ participants_count }} participantes ({{ participants_online}} conectados)</span>
   </div>
 </script>
 
@@ -44,7 +44,7 @@
 
 <!-- OPERATION -->
 <script type="text/html" id="operation_template">
-  <div class="operation {{action}}">{{user_name}} {{action}} {{model}}: {{params_str}}</div>
+  <div class="operation {{action}}">{{participant_name}} {{action}} {{model}}: {{params_str}}</div>
 </script>
 
 <!-- TOPIC EDITOR (with entry list inside) -->
@@ -62,7 +62,7 @@
 <script type="text/html" id="entry_template">
   <div class="entry">
     <div class="entry-info">
-      <div class="user" style="background-color: #{{user_color}};">{{user_name}}</div>
+      <div class="participant" style="background-color: #{{participant_color}};">{{participant_name}}</div>
     </div>
     <div class="body">{{body}}</div>
   </div>

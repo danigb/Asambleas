@@ -5,17 +5,17 @@
       
       $$.Session.bind('change:current_topic', this.currentTopicChanged);
       $$.Topics.bind('add', this.newTopic);
-      $$.Session.bind('change:current_user', this.currentUserChanged);
+      $$.Session.bind('change:current_participant', this.currentParticipantSet);
 
       $("#info-messages").click($$.LayoutHelper.showMessages);
       $("#info-operations").click($$.LayoutHelper.showOperations);
-      $("#info-users").click($$.LayoutHelper.showUsers);
+      $("#info-participants").click($$.LayoutHelper.showParticipants);
       $("#info-entries").click($$.LayoutHelper.showEntries);
       $("#info-topics").click($$.LayoutHelper.showTopics);
       $("#info-assembly").click($$.LayoutHelper.showAssembly);
 
       $$.LayoutHelper.showMessages();
-      $$.LayoutHelper.showUsers();
+      $$.LayoutHelper.showParticipants();
       $$.LayoutHelper.showTopics();
     },
     
@@ -26,14 +26,13 @@
       $$.LayoutHelper.showEntries();
     },
 
-    currentUserChanged : function() {
-      console.log("CURRENT USER!");
+    currentParticipantSet : function() {
       var status = {
-        name : $$.Session.current_name(),
-        users_count: $$.Participants.length,
-        users_online: $$.Participants.online()
+        name : $$.Session.current_name,
+        participants_count: $$.Participants.length,
+        participants_online: $$.Participants.online()
       };
-      $("#info-users").html( ich.user_status_template(status));
+      $("#info-participants").html( ich.participant_status_template(status));
     },
 
     newTopic : function(topic) {

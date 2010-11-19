@@ -11,3 +11,9 @@ gac = Group.create(:name => 'Hierbagüenas')
 gac.users << dani
 gac.save
 
+a1 = vega.assemblies.create(:title => 'Asamblea1')
+a1.participants.create(:name => 'Dani', :user_id => dani.id)
+a2 = vega.assemblies.create(:title => 'Asamblea2')
+a2.participants.create(:name => 'Dani', :user_id => dani.id)
+
+

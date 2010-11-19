@@ -6,7 +6,12 @@ class AssembliesController < InheritedResources::Base
  
   def show
     @assembly = current_user.assemblies.find params[:id]
-    render :layout => 'repository'
+    if params[:participant_id]
+      @participant = @assembly.participants.find(params[:participant_id])
+    else
+      @participant = @assembly.default_participant(current_user)
+    end
+    render :layout => 'client'
   end
 
   def create

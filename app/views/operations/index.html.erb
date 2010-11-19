@@ -7,17 +7,17 @@
 
 <table>
   <tr>
-    <th>Operation Id</th>
-    <th>User</th>
-    <th>Action</th>
-    <th>Model</th>
-    <th>Params</th>
+    <th>Id</th>
+    <th>Participante</th>
+    <th>Acción</th>
+    <th>Modelo</th>
+    <th>Parámetros</th>
     <th></th>
   </tr>
   <% @operations.each do |op| %>
     <tr>
       <td><%= op.id %></td>
-      <td><%= op.user.name %></td>
+      <td><%= op.participant.name %></td>
       <td><%= op.action %></td>
       <td><%= op.model %></td>
       <td><%= op.params %></td>
