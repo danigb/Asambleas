@@ -42,6 +42,7 @@
 <script type="text/javascript">
   Assembly = {}
   Assembly.operation_url = '<%= assembly_operations_url(@assembly) %>';
+  Assembly.messages_url = '<%=  assembly_messages_url(@assembly) %>';
   Assembly.current_participant_id = <%= @participant.id %>;
   Assembly.attributes = <%= @assembly.to_json.html_safe %>;
   Assembly.participants = <%= @assembly.participants.to_json.html_safe %>;

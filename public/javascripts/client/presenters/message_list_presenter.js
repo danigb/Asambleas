@@ -34,9 +34,9 @@
 
     createOnEnter: function(e) {
       if (e.keyCode == 13) {
-        $$.Messages.add({
+        $$.Messages.create(new $$.Message({
           body: this.input.val()
-        });
+        }));
         this.input.val('');
         return false;
       }

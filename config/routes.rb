@@ -4,6 +4,7 @@ Asamblea::Application.routes.draw do
     resources :assemblies, :path => 'a' do
       resources :operations, :path => 'o'
       resources :participants, :path => 'p'
+      resources :messages, :path => 'm'
     end
     resources :groups, :path => 'grupos'
     resources :activities, :path => 'actividades'

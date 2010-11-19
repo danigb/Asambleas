@@ -20,13 +20,16 @@
   });
 
   function loadData() {
+    var assembly = new $$.Assembly(Assembly.attributes);
     $$.Session.set({
-      assembly : new $$.Assembly(Assembly.attributes)
+      assembly : assembly
     });
 
+    $$.RealTime.connect(assembly.get('id'));
+
     // LOAD PARTICIPANTS
-    for (var index = 0; index < Assembly.participants.length; index++) {
-      $$.Participants.add(new $$.Participant(Assembly.participants[index]));
+    for (var parIndex = 0; parIndex < Assembly.participants.length; parIndex++) {
+      $$.Participants.add(new $$.Participant(Assembly.participants[parIndex]));
     }
     var current_participant = $$.Participants.getByParticipantId(Assembly.current_participant_id);
     console.log("SET current", current_participant)
@@ -35,11 +38,8 @@
     });
 
     // LOAD OPERATIONS
-    for (var opi = 0; opi < Assembly.operations.length; opi++) {
-      var operation = Assembly.operations[opi];
-      console.log("LOAD OP", operation);
-      operation.params = $.parseJSON(operation.params);
-      $$.Operations.add(new $$.Operation(operation));
+    for (var opIndex = 0; opIndex < Assembly.operations.length; opIndex++) {
+      $$.Operations.receive(Assembly.operations[opIndex]);
     }
 
 

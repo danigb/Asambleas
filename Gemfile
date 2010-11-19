@@ -7,6 +7,7 @@ gem "simple_form"
 gem "show_for"
 gem "cancan"
 gem "jammit"
+gem "rest-client"
 
 
 # Bundle edge Rails instead:

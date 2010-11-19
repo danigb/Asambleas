@@ -19,7 +19,7 @@
           <%= participant.name %>
         <% end %> </td>
       <td class="actions">
-
+        <%= link_to 'Enviar mensaje', new_assembly_message_path(assembly) %>
         <%= link_to 'Participantes', assembly_participants_path(assembly) %>
         <%= link_to 'Operaciones', assembly_operations_path(assembly) %>
         <%= link_to 'Editar', edit_assembly_path(assembly) %>
