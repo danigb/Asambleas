@@ -10,8 +10,8 @@
 @font-action: "Helvetica";
 @font-sans: "Lobster", Arial, serif;
 @font-serif: Georgia, serif;
-@color-GET: #9DEC9C;
-@color-POST: #F685E1;
+@color-update: #9DEC9C;
+@color-create: #F685E1;
 @color-active: #c00;
 
 .btl {
@@ -131,20 +131,20 @@ body {
 /** Operations **/
 #operations {background-color: @color-header; padding-left: 5px; border-left: 1px solid white; .full-container;}
 #operations .operation {.ballon;}
-.operation.GET {background-color: @color-GET;}
-.operation.POST {background-color: @color-POST;}
+.operation.update {background-color: @color-update;}
+.operation.create {background-color: @color-create;}
 
 /** Messages **/
 #messages {border-left: 1px solid white; .full-container;}
-#messages .output {position: absolute; left: 5px; right: 5px; top: 5px; bottom: 130px; overflow: auto;}
+#messages .output {.full-container; overflow: auto; left: 5px; right: 5px;}
 .controls {
   position: absolute; left: 0; right: 0; bottom: 0px; height: 90px; overflow: hidden;}
 .controls textarea {position: absolute; left: 0px; top: 3px; right: 0px; bottom: 3px;
                     background-color: white; border: 1px solid @color-sombra; }
-.message {
-  width: 97%; padding: 3px 3px; background-color: white; margin: 3px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 0px; .rounded;}
-.message .attr-status {float: right;}
+.message {width: 100%; overflow: hidden;}
+.message .content {width: 95%; background-color: white; .ballon; float: left; overflow: hidden;}
+.message .participant {font-size: 80%; .ballon; float: left; margin-right: 3px;}
+.message .body {}
 
 
 /** Participants **/

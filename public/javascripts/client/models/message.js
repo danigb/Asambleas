@@ -3,11 +3,11 @@
     DONE: "done",
     PENDING: "pending",
     initialize: function() {
-      if (!this.get("status")) {
-        this.set({
-          "status": this.PENDING
-        });
-      }
+      var participant = $$.Session.current_participant;
+      this.set({
+        participant_name : participant.get('name'),
+        participant_color : participant.get('color')
+        })
     },
     clear: function() {
       this.destroy();

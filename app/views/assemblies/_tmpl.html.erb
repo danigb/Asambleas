@@ -30,8 +30,10 @@
 <!-- MESSAGE -->
 <script type="text/html" id="message_template">
   <div class="message">
-    <div class="attr-status">{{ status }}</div>
-    <div class="attr-action">{{ body }}</div>
+    <div class="content">
+      <div class="participant" style="background-color: #{{participant_color}};">{{ participant_name }}</div>
+      <div class="body">{{ body }}</div>
+    </div>
   </div>
 </script>
 
